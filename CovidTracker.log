@@ -980,3 +980,1104 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.vaadin.covid.jpa.S
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.18.jar:5.3.18]
 	... 89 common frames omitted
 
+2022-08-04 16:29:48.158  INFO 11876 --- [http-nio-8080-exec-5] org.vaadin.covid.view.MainView           : User: 4A1407B9F8033E99FD0D950336A442B1 entered MainViewBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+2022-08-04 16:30:10.806  INFO 11876 --- [http-nio-8080-exec-1] org.vaadin.covid.view.MainView           : User: 4A1407B9F8033E99FD0D950336A442B1 entered MainViewBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+2022-08-04 16:30:10.816 ERROR 11876 --- [http-nio-8080-exec-1] c.v.flow.router.InternalServerError      : There was an exception while trying to navigate to ''
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.vaadin.covid.view.HomeView': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.vaadin.covid.view.HomeView]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "org.vaadin.covid.jpa.Status.getCreationDate()" because the return value of "org.vaadin.covid.repository.StatusRepository.findFirstByCreationDateBefore(java.time.LocalDate)" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:332) ~[spring-beans-5.3.18.jar:5.3.18]
+	at com.vaadin.flow.spring.SpringInstantiator.getOrCreate(SpringInstantiator.java:117) ~[vaadin-spring-23.0.7.jar:na]
+	at com.vaadin.flow.di.Instantiator.createRouteTarget(Instantiator.java:193) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.lambda$getRouteTarget$1(AbstractNavigationStateRenderer.java:135) ~[flow-server-23.0.7.jar:23.0.7]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.getRouteTarget(AbstractNavigationStateRenderer.java:134) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.sendBeforeEnterEventAndPopulateChain(AbstractNavigationStateRenderer.java:488) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.createChainIfEmptyAndExecuteBeforeEnterNavigation(AbstractNavigationStateRenderer.java:469) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.router.internal.AbstractNavigationStateRenderer.handle(AbstractNavigationStateRenderer.java:207) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.component.internal.JavaScriptNavigationStateRenderer.handle(JavaScriptNavigationStateRenderer.java:79) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.component.internal.JavaScriptBootstrapUI.handleNavigation(JavaScriptBootstrapUI.java:317) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.component.internal.JavaScriptBootstrapUI.renderViewForRoute(JavaScriptBootstrapUI.java:280) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.component.internal.JavaScriptBootstrapUI.lambda$connectClient$e368b2b7$1(JavaScriptBootstrapUI.java:143) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.component.internal.JavaScriptBootstrapUI.connectClient(JavaScriptBootstrapUI.java:151) ~[flow-server-23.0.7.jar:23.0.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at com.vaadin.flow.server.communication.rpc.PublishedServerEventHandlerRpcHandler.invokeMethod(PublishedServerEventHandlerRpcHandler.java:222) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.rpc.PublishedServerEventHandlerRpcHandler.invokeMethod(PublishedServerEventHandlerRpcHandler.java:199) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.rpc.PublishedServerEventHandlerRpcHandler.invokeMethod(PublishedServerEventHandlerRpcHandler.java:149) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.rpc.PublishedServerEventHandlerRpcHandler.handleNode(PublishedServerEventHandlerRpcHandler.java:132) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.rpc.AbstractRpcInvocationHandler.handle(AbstractRpcInvocationHandler.java:76) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocationData(ServerRpcHandler.java:438) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.ServerRpcHandler.lambda$handleInvocations$1(ServerRpcHandler.java:419) ~[flow-server-23.0.7.jar:23.0.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleInvocations(ServerRpcHandler.java:419) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.ServerRpcHandler.handleRpc(ServerRpcHandler.java:320) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.communication.UidlRequestHandler.synchronizedHandleRequest(UidlRequestHandler.java:115) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.SynchronizedRequestHandler.handleRequest(SynchronizedRequestHandler.java:40) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.VaadinService.handleRequest(VaadinService.java:1567) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.server.VaadinServlet.service(VaadinServlet.java:299) ~[flow-server-23.0.7.jar:23.0.7]
+	at com.vaadin.flow.spring.SpringServlet.service(SpringServlet.java:109) ~[vaadin-spring-23.0.7.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:353) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:313) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.servlet.mvc.ServletForwardingController.handleRequestInternal(ServletForwardingController.java:141) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:177) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:51) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.18.jar:5.3.18]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.60.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.18.jar:5.3.18]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.60.jar:9.0.60]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.vaadin.covid.view.HomeView]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "org.vaadin.covid.jpa.Status.getCreationDate()" because the return value of "org.vaadin.covid.repository.StatusRepository.findFirstByCreationDateBefore(java.time.LocalDate)" is null
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 88 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "org.vaadin.covid.jpa.Status.getCreationDate()" because the return value of "org.vaadin.covid.repository.StatusRepository.findFirstByCreationDateBefore(java.time.LocalDate)" is null
+	at org.vaadin.covid.view.HomeView.buildInzidenzChart(HomeView.java:57) ~[classes/:na]
+	at org.vaadin.covid.view.HomeView.<init>(HomeView.java:39) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 90 common frames omitted
+
+2022-08-04 16:30:12.005  INFO 11876 --- [http-nio-8080-exec-3] org.vaadin.covid.view.MainView           : User: 4A1407B9F8033E99FD0D950336A442B1 entered MainViewBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+2022-08-04 16:35:04.931  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:04.932  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.
+2022-08-04 16:35:04.932  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:04.932  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/Flow.js
+2022-08-04 16:35:04.932  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\Flow.js'
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/VaadinDevmodeGizmo.js
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\VaadinDevmodeGizmo.js'
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/frontend/generated-flow-imports.js
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\frontend\generated-flow-imports.js'
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] 3 errors and 1 warning were reported.
+2022-08-04 16:35:04.933  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] : Failed to compile.
+2022-08-04 16:35:04.944  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : No issues found.
+2022-08-04 16:35:06.371  INFO 11876 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:06.375  INFO 11876 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-04 16:35:06.379  INFO 11876 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-04 16:35:06.472  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:35:06.472 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:35:06.472  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:35:06.603  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:35:06.604  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2022-08-04 16:35:06.761  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:35:06.762  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:35:06.762  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:35:06.795  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:35:06.795  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2022-08-04 16:35:06.827  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 2 ms
+2022-08-04 16:35:09.954  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 3106 ms
+2022-08-04 16:35:09.956  WARN 11876 --- [restartedMain] c.v.b.d.stats.DevModeUsageStatistics     : init should only be called once
+2022-08-04 16:35:09.977  INFO 11876 --- [restartedMain] c.v.b.d.startup.DevModeStartupListener   : Starting dev-mode updaters in C:\Workspace\Coding\IntelliJ\CovidTracker folder.
+2022-08-04 16:35:09.989  INFO 11876 --- [restartedMain] c.v.f.s.f.s.FullDependenciesScanner      : Visited 115 classes. Took 9 ms.
+2022-08-04 16:35:10.029  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskUpdatePackages      : Skipping `npm install` because the frontend packages are already installed in the folder 'C:\Workspace\Coding\IntelliJ\CovidTracker\node_modules' and the hash in the file 'C:\Workspace\Coding\IntelliJ\CovidTracker\node_modules\.vaadin\vaadin.json' is the same as in 'package.json'
+2022-08-04 16:35:10.029  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskCopyFrontendFiles   : Copying frontend resources from jar files ...
+2022-08-04 16:35:10.047  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:35:10.054  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-08-04 16:35:10.058  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-08-04 16:35:10.058  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:35:10.072  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:35:10.073  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:10.078  WARN 11876 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'covidTrackerApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2022-08-04 16:35:10.079  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:10.079  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2022-08-04 16:35:10.080  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2022-08-04 16:35:10.081  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-04 16:35:10.085  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskCopyFrontendFiles   : Visited 19 resources. Took 54 ms.
+2022-08-04 16:35:10.091  INFO 11876 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-04 16:35:10.134 ERROR 11876 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'covidTrackerApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.vaadin.covid.CovidTrackerApplication.main(CovidTrackerApplication.java:81) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:743) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:675) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/vaadin/covid/repository/BundeslandMVRepository
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:738) ~[spring-core-5.3.18.jar:5.3.18]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.vaadin.covid.repository.BundeslandMVRepository
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 30 common frames omitted
+
+2022-08-04 16:35:10.141  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [webpack-dev-middleware] wait until bundle finished: /index.html
+2022-08-04 16:35:10.275  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/Flow.js
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\Flow.js'
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/VaadinDevmodeGizmo.js
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\VaadinDevmodeGizmo.js'
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/frontend/generated-flow-imports.js
+2022-08-04 16:35:10.276  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\frontend\generated-flow-imports.js'
+2022-08-04 16:35:10.277  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.b.devserver.AbstractDevServerRunner  : Reusing Webpack running at http://localhost:63044
+2022-08-04 16:35:10.277  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] 3 errors and 1 warning were reported.
+2022-08-04 16:35:10.277  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] : Failed to compile.
+2022-08-04 16:35:10.301  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : No issues found.
+2022-08-04 16:35:12.859  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:35:12.860 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:35:12.860  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:35:13.169  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:35:13.204  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:35:13.378  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:35:13.378  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:35:13.378  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:35:13.405  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:35:13.405  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 543 ms
+2022-08-04 16:35:13.452  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 15 ms
+2022-08-04 16:35:16.059  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for subclasses and classes with annotations took 2565 ms
+2022-08-04 16:35:16.062  WARN 11876 --- [restartedMain] c.v.b.d.stats.DevModeUsageStatistics     : init should only be called once
+2022-08-04 16:35:16.081  INFO 11876 --- [restartedMain] c.v.b.d.startup.DevModeStartupListener   : Starting dev-mode updaters in C:\Workspace\Coding\IntelliJ\CovidTracker folder.
+2022-08-04 16:35:16.090  INFO 11876 --- [restartedMain] c.v.f.s.f.s.FullDependenciesScanner      : Visited 118 classes. Took 7 ms.
+2022-08-04 16:35:16.137  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskUpdatePackages      : Skipping `npm install` because the frontend packages are already installed in the folder 'C:\Workspace\Coding\IntelliJ\CovidTracker\node_modules' and the hash in the file 'C:\Workspace\Coding\IntelliJ\CovidTracker\node_modules\.vaadin\vaadin.json' is the same as in 'package.json'
+2022-08-04 16:35:16.137  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskCopyFrontendFiles   : Copying frontend resources from jar files ...
+2022-08-04 16:35:16.140  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:35:16.147  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2022-08-04 16:35:16.150  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2022-08-04 16:35:16.150  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:35:16.405  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:16.405  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.
+2022-08-04 16:35:16.405  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/Flow.js
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\Flow.js'
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/VaadinDevmodeGizmo.js
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\VaadinDevmodeGizmo.js'
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/frontend/generated-flow-imports.js
+2022-08-04 16:35:16.406  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\frontend\generated-flow-imports.js'
+2022-08-04 16:35:16.407  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] 3 errors and 1 warning were reported.
+2022-08-04 16:35:16.407  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] : Failed to compile.
+2022-08-04 16:35:16.433  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : No issues found.
+2022-08-04 16:35:16.481  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:35:16.482  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:16.614  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.f.s.frontend.TaskCopyFrontendFiles   : Visited 19 resources. Took 476 ms.
+2022-08-04 16:35:16.671  INFO 11876 --- [ForkJoinPool.commonPool-worker-3] c.v.b.devserver.AbstractDevServerRunner  : Reusing Webpack running at http://localhost:63044
+2022-08-04 16:35:16.792  WARN 11876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:35:16.903  INFO 11876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-04 16:35:16.910  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:35:16.910  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:35:16.914  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:35:16.916  INFO 11876 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:35:16.917  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:35:16.917  INFO 11876 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:35:16.918  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:35:16.918  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:35:16.918  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:35:16.918  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:35:16.919  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:35:16.919  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:35:16.919  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:35:16.919  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.920  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:35:16.921  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:35:16.933  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:35:16.936  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 4.1 seconds (JVM running for 1318.826)
+2022-08-04 16:35:16.938  INFO 11876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-04 16:35:17.192 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.195 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.195  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:35:17.273 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.282 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.282  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:35:17.367 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.372 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.372  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:35:17.464 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.465 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.465  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:35:17.545 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.551 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.552  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:35:17.631 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.645 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.645  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:35:17.798 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.811 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.812  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:35:17.981 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:17.989 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:17.990  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:35:18.101 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:18.114 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:18.115  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:35:18.233 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:18.241 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:18.241  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:35:18.395 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:18.401  INFO 11876 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:18.402  INFO 11876 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2022-08-04 16:35:18.403 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:18.404  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:35:18.411 ERROR 11876 --- [scheduling-1] o.vaadin.covid.CovidTrackerApplication   : Error while fetching data from Nwm because of: Error creating bean with name 'dataSourceScriptDatabaseInitializer': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+2022-08-04 16:35:18.447  INFO 11876 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2022-08-04 16:35:18.523 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:18.527 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:18.533  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:35:18.702 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:18.703  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:35:18.709  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:35:18.709 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:35:18.710  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:35:18.710 ERROR 11876 --- [scheduling-1] o.vaadin.covid.CovidTrackerApplication   : Error while fetching data from SN because of: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Unsatisfied dependency expressed through method 'dataSource' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': Could not bind properties to 'DataSourceProperties' : prefix=spring.datasource, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is java.lang.IllegalStateException: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@46af83f8 has been closed already
+2022-08-04 16:35:19.018  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:35:19.077  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:35:19.291  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:35:19.292  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:35:19.293  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:35:19.326  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:35:19.326  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 605 ms
+2022-08-04 16:35:19.382  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 20 ms
+2022-08-04 16:35:19.473  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:35:19.505  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2022-08-04 16:35:19.519  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2022-08-04 16:35:19.520  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:35:19.767  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:19.767  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.
+2022-08-04 16:35:19.767  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:19.767  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/Flow.js
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\Flow.js'
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/VaadinDevmodeGizmo.js
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\VaadinDevmodeGizmo.js'
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/frontend/generated-flow-imports.js
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\frontend\generated-flow-imports.js'
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] 3 errors and 1 warning were reported.
+2022-08-04 16:35:19.768  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] : Failed to compile.
+2022-08-04 16:35:19.791  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : No issues found.
+2022-08-04 16:35:20.243  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:35:20.243  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:35:20.614  WARN 11876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:35:20.721  INFO 11876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-04 16:35:20.730  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:35:20.730  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:35:20.734  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:35:20.736  INFO 11876 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:35:20.737  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:35:20.737  INFO 11876 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:35:20.738  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:35:20.738  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:35:20.739  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.740  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:35:20.741  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:35:20.742  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:35:20.759  WARN 11876 --- [restartedMain] c.v.flow.server.VaadinServletService     : no DevModeHandlerManager implementation found but dev server enabled. Include the com.vaadin.vaadin-dev-server dependency.
+2022-08-04 16:35:20.762  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:35:20.765  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 2.2 seconds (JVM running for 1322.655)
+2022-08-04 16:35:20.767  INFO 11876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-04 16:35:21.082 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.083 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.084  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:35:21.393 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.393 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.394  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:35:21.537 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.537 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.537  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:35:21.655 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.656 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.657  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:35:21.735 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.736 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.736  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:35:21.893 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:21.893 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:21.894  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : WARNING in InjectManifest has been called multiple times, perhaps due to running webpack in --watch mode. The precache manifest generated after the first call may be inaccurate! Please see https://github.com/GoogleChrome/workbox/issues/1790 for more information.
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/flow-frontend/Flow.js
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\flow-frontend\Flow.js'
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : 
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : ERROR in ../target/frontend/generated-flow-imports.js
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Module build failed: Error: ENOENT: no such file or directory, open 'C:\Workspace\Coding\IntelliJ\CovidTracker\target\frontend\generated-flow-imports.js'
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] 2 errors and 1 warning were reported.
+2022-08-04 16:35:22.075  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : [build-status] : Failed to compile.
+2022-08-04 16:35:22.178  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : Issues checking in progress...
+2022-08-04 16:35:22.199 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:22.200 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:22.201  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:35:22.289  INFO 11876 --- [dev-server-output] c.v.b.devserver.DevServerOutputTracker   : No issues found.
+2022-08-04 16:35:22.588 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:22.589 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:22.590  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:35:22.966 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:22.966 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:22.966  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:35:23.389 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:23.390 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:23.391  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:35:23.768 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:23.768 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:23.768  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:35:24.165 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:24.166 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:24.167  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:35:24.302 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:35:24.302 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:35:24.303  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:36:56.285  INFO 11876 --- [Thread-26] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:36:56.286  INFO 11876 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2022-08-04 16:36:56.288  INFO 11876 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2022-08-04 16:36:56.362  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:36:56.362 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:36:56.362  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:36:56.472  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:36:56.512  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:36:56.657  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:36:56.658  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:36:56.658  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:36:56.685  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:36:56.685  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 320 ms
+2022-08-04 16:36:56.739  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 21 ms
+2022-08-04 16:36:56.831  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:36:56.836  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2022-08-04 16:36:56.839  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2022-08-04 16:36:56.839  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:36:57.112  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:36:57.113  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:36:57.359  WARN 11876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:36:57.435  INFO 11876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-04 16:36:57.443  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:36:57.443  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:36:57.445  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:36:57.447  INFO 11876 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:36:57.447  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:36:57.448  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:36:57.449  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:36:57.450  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:36:57.450  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:36:57.450  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:36:57.459  WARN 11876 --- [restartedMain] c.v.flow.server.VaadinServletService     : no DevModeHandlerManager implementation found but dev server enabled. Include the com.vaadin.vaadin-dev-server dependency.
+2022-08-04 16:36:57.460  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:36:57.464  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 1.126 seconds (JVM running for 1419.353)
+2022-08-04 16:36:57.465  INFO 11876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-04 16:36:57.719 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:57.720 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:57.720  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:36:57.792 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:57.794 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:57.795  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:36:57.867 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:57.869 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:57.870  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:36:57.942 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:57.948 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:57.949  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:36:58.022 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.025 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.026  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:36:58.094 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.109 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.109  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:36:58.178 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.195 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.195  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:36:58.280 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.309 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.310  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:36:58.386 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.399 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.399  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:36:58.470 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.485 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.485  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:36:58.576 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.584 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.584  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:36:58.733 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.754 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.754  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:36:58.831 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:36:58.845 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:36:58.846  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:37:20.445  INFO 11876 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:20.446  INFO 11876 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2022-08-04 16:37:20.448  INFO 11876 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2022-08-04 16:37:20.547  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:37:20.547 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:37:20.548  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:37:20.677  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:37:20.711  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:37:20.828  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:37:20.828  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:37:20.828  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:37:20.855  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:37:20.855  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 305 ms
+2022-08-04 16:37:20.902  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 20 ms
+2022-08-04 16:37:20.974  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:37:20.979  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2022-08-04 16:37:20.981  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2022-08-04 16:37:20.981  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:37:21.255  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:37:21.255  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:21.500  WARN 11876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:37:21.588  INFO 11876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-04 16:37:21.596  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:37:21.596  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:37:21.600  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:37:21.602  INFO 11876 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:37:21.603  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:37:21.604  INFO 11876 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:37:21.604  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:37:21.604  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:37:21.605  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:37:21.606  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:37:21.607  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:37:21.618  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:37:21.622  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 1.107 seconds (JVM running for 1443.511)
+2022-08-04 16:37:21.623  INFO 11876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-04 16:37:21.832 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:21.834 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:21.834  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:37:21.922 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:21.932 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:21.933  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:37:22.009 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:22.016 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:22.017  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:37:22.103 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:22.109 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:22.110  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:37:22.227 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:22.230 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:22.231  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:37:22.690 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:22.871 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:22.872  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:37:23.200 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:23.247 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:23.247  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:37:23.517 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:23.613 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:23.613  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:37:24.004 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:24.005 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:24.005  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:37:24.330 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:24.453 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:24.453  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:37:24.718 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:24.808 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:24.808  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:37:25.001 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:25.088 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:25.088  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:37:25.164 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:25.264 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:25.264  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:37:43.541  INFO 11876 --- [Thread-36] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:43.541  INFO 11876 --- [Thread-36] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2022-08-04 16:37:43.544  INFO 11876 --- [Thread-36] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2022-08-04 16:37:43.635  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:37:43.636 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:37:43.636  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:37:43.810  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:37:43.810  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2022-08-04 16:37:43.951  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:37:43.953  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:37:43.953  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:37:43.983  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:37:43.983  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 342 ms
+2022-08-04 16:37:44.007  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 2 ms
+2022-08-04 16:37:44.118  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:37:44.124  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2022-08-04 16:37:44.128  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2022-08-04 16:37:44.128  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:37:44.146  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:37:44.147  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:44.155  WARN 11876 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'covidTrackerApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2022-08-04 16:37:44.156  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:44.156  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2022-08-04 16:37:44.157  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2022-08-04 16:37:44.158  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-04 16:37:44.166  INFO 11876 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-04 16:37:44.172 ERROR 11876 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'covidTrackerApplication': Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:597) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.vaadin.covid.CovidTrackerApplication.main(CovidTrackerApplication.java:81) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.7.jar:2.6.7]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.vaadin.covid.CovidTrackerApplication] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:743) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:675) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:407) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:388) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:335) ~[spring-orm-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1116) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/vaadin/covid/repository/BundeslandMVRepository
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:738) ~[spring-core-5.3.18.jar:5.3.18]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.vaadin.covid.repository.BundeslandMVRepository
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 30 common frames omitted
+
+2022-08-04 16:37:48.133  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 11876 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:37:48.133 DEBUG 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:37:48.133  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:37:48.595  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:37:48.638  INFO 11876 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:37:48.807  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:37:48.807  INFO 11876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:37:48.807  INFO 11876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:37:48.838  INFO 11876 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:37:48.838  INFO 11876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 690 ms
+2022-08-04 16:37:48.893  INFO 11876 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 18 ms
+2022-08-04 16:37:48.971  INFO 11876 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:37:48.976  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2022-08-04 16:37:48.979  INFO 11876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2022-08-04 16:37:48.980  INFO 11876 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:37:49.034  INFO 17360 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 17360 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:37:49.036 DEBUG 17360 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:37:49.036  INFO 17360 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:37:49.098  INFO 17360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-04 16:37:49.098  INFO 17360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-04 16:37:49.268  INFO 11876 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:37:49.269  INFO 11876 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:49.505  WARN 11876 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:37:49.571  INFO 17360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:37:49.581  INFO 11876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-04 16:37:49.590  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:37:49.590  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:37:49.593  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:37:49.594  INFO 11876 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:37:49.596  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:37:49.597  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:37:49.598  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:37:49.599  INFO 11876 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:37:49.613  INFO 11876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:37:49.616  INFO 11876 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 1.525 seconds (JVM running for 1471.505)
+2022-08-04 16:37:49.617  INFO 11876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-08-04 16:37:49.669  INFO 17360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:37:50.372  INFO 17360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:37:50.381  INFO 17360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:37:50.381  INFO 17360 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:37:50.412 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.414 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.414  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:37:50.480  INFO 17360 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:37:50.480  INFO 17360 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1381 ms
+2022-08-04 16:37:50.489 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.493 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.494  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:37:50.573 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.594 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.594  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:37:50.613  INFO 17360 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 35 ms
+2022-08-04 16:37:50.658 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.680 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.680  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:37:50.750 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.755 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.756  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:37:50.760  INFO 17360 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:37:50.801  INFO 17360 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-08-04 16:37:50.830 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.860 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.861  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:37:50.907  INFO 17360 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-04 16:37:50.927 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:50.944 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:50.944  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:37:50.984  INFO 17360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-04 16:37:51.012 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.030 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.031  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:37:51.030  INFO 17360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-04 16:37:51.048  INFO 17360 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:37:51.103 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.111 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.111  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:37:51.196 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.209 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.210  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:37:51.293 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.298 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.298  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:37:51.366 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.377 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.377  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:37:51.451 DEBUG 11876 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:37:51.461 DEBUG 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:37:51.461  INFO 11876 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:37:51.811  INFO 17360 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:37:51.818  INFO 17360 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:52.311  WARN 17360 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:37:52.616  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:37:52.617  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:37:52.632  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:37:52.635  INFO 17360 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:37:52.639  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:37:52.643  INFO 17360 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:37:52.652  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:37:52.652  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:37:52.652  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:37:52.653  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:37:52.653  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:37:52.653  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:37:52.654  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:37:52.654  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:37:52.655  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:37:52.655  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:37:52.655  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:37:52.655  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:37:52.655  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:37:52.656  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:37:52.660  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.660  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.660  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.660  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.661  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.661  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.661  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.661  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:37:52.661  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:37:52.662  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:37:52.663  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:37:52.663  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:37:52.664  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:37:52.664  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:37:52.665  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:37:52.665  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:37:52.665  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:37:52.669  INFO 17360 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:37:52.685  WARN 17360 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-08-04 16:37:52.689  INFO 17360 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:37:52.690  INFO 17360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-04 16:37:52.695  INFO 17360 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-04 16:37:52.697  INFO 17360 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-08-04 16:37:52.709  INFO 17360 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-08-04 16:37:52.722 ERROR 17360 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-08-04 16:38:05.553  INFO 11876 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:38:05.554  INFO 11876 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2022-08-04 16:38:05.556  INFO 11876 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2022-08-04 16:39:22.313  INFO 21596 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Starting CovidTrackerApplication using Java 17.0.1 on Laptop-von-Ole with PID 21596 (C:\Workspace\Coding\IntelliJ\CovidTracker\target\classes started by olech in C:\Workspace\Coding\IntelliJ\CovidTracker)
+2022-08-04 16:39:22.315 DEBUG 21596 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-08-04 16:39:22.316  INFO 21596 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-04 16:39:22.370  INFO 21596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-04 16:39:22.371  INFO 21596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-04 16:39:22.988  INFO 21596 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-04 16:39:23.081  INFO 21596 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 13 JPA repository interfaces.
+2022-08-04 16:39:23.817  INFO 21596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-08-04 16:39:23.825  INFO 21596 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-04 16:39:23.825  INFO 21596 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-08-04 16:39:23.914  INFO 21596 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-04 16:39:23.914  INFO 21596 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1543 ms
+2022-08-04 16:39:24.070  INFO 21596 --- [restartedMain] c.v.f.s.VaadinServletContextInitializer  : Search for VaadinAppShell took 48 ms
+2022-08-04 16:39:24.226  INFO 21596 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-04 16:39:24.267  INFO 21596 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-08-04 16:39:24.373  INFO 21596 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-04 16:39:24.451  INFO 21596 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-04 16:39:24.497  INFO 21596 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-04 16:39:24.513  INFO 21596 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MariaDB106Dialect
+2022-08-04 16:39:25.454  INFO 21596 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-04 16:39:25.461  INFO 21596 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 16:39:26.003  WARN 21596 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-04 16:39:26.276  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler mapped to context-path: /*
+2022-08-04 16:39:26.276  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed the following AtmosphereInterceptor mapped to AtmosphereHandler com.vaadin.flow.server.communication.PushAtmosphereHandler
+2022-08-04 16:39:26.284  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using org.atmosphere.util.VoidAnnotationProcessor for processing annotation
+2022-08-04 16:39:26.292  INFO 21596 --- [restartedMain] org.atmosphere.util.ForkJoinPool         : Using ForkJoinPool  java.util.concurrent.ForkJoinPool. Set the org.atmosphere.cpr.broadcaster.maxAsyncWriteThreads to -1 to fully use its power.
+2022-08-04 16:39:26.297  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed WebSocketProtocol org.atmosphere.websocket.protocol.SimpleHttpProtocol 
+2022-08-04 16:39:26.297  INFO 21596 --- [restartedMain] o.a.container.JSR356AsyncSupport         : JSR 356 Mapping path /vaadinServlet
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installing Default AtmosphereInterceptors
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CorsInterceptor : CORS Interceptor Support
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.CacheHeadersInterceptor : Default Response's Headers Interceptor
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.PaddingAtmosphereInterceptor : Browser Padding Interceptor Support
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.AndroidAtmosphereInterceptor : Android Interceptor Support
+2022-08-04 16:39:26.306  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Dropping Interceptor org.atmosphere.interceptor.HeartbeatInterceptor
+2022-08-04 16:39:26.310  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.SSEAtmosphereInterceptor : SSE Interceptor Support
+2022-08-04 16:39:26.311  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JSONPAtmosphereInterceptor : JSONP Interceptor Support
+2022-08-04 16:39:26.312  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.JavaScriptProtocol : Atmosphere JavaScript Protocol
+2022-08-04 16:39:26.312  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor : org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor
+2022-08-04 16:39:26.313  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.OnDisconnectInterceptor : Browser disconnection detection
+2022-08-04 16:39:26.313  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : 	org.atmosphere.interceptor.IdleResourceInterceptor : org.atmosphere.interceptor.IdleResourceInterceptor
+2022-08-04 16:39:26.313  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Set org.atmosphere.cpr.AtmosphereInterceptor.disableDefaults to disable them.
+2022-08-04 16:39:26.313  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor CORS Interceptor Support with priority FIRST_BEFORE_DEFAULT 
+2022-08-04 16:39:26.315  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Default Response's Headers Interceptor with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser Padding Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Android Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor SSE Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor JSONP Interceptor Support with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Atmosphere JavaScript Protocol with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.WebSocketMessageSuspendInterceptor with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor Browser disconnection detection with priority AFTER_DEFAULT 
+2022-08-04 16:39:26.317  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor org.atmosphere.interceptor.IdleResourceInterceptor with priority BEFORE_DEFAULT 
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using EndpointMapper class org.atmosphere.util.DefaultEndpointMapper
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterCache: org.atmosphere.cache.UUIDBroadcasterCache
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Default Broadcaster Class: org.atmosphere.cpr.DefaultBroadcaster
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Shared List Resources: false
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Broadcaster Polling Wait Time 100
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Shared ExecutorService supported: true
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Messaging ExecutorService Pool Size unavailable - Not instance of ThreadPoolExecutor
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Async I/O Thread Pool Size: 200
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using BroadcasterFactory: org.atmosphere.cpr.DefaultBroadcasterFactory
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using AtmosphereResurceFactory: org.atmosphere.cpr.DefaultAtmosphereResourceFactory
+2022-08-04 16:39:26.318  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Using WebSocketProcessor: org.atmosphere.websocket.DefaultWebSocketProcessor
+2022-08-04 16:39:26.319  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Invoke AtmosphereInterceptor on WebSocket message true
+2022-08-04 16:39:26.319  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : HttpSession supported: true
+2022-08-04 16:39:26.319  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using DefaultAtmosphereObjectFactory for dependency injection and object creation
+2022-08-04 16:39:26.320  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere is using async support: org.atmosphere.container.JSR356AsyncSupport running under container: Apache Tomcat/9.0.60 using javax.servlet/3.0 and jsr356/WebSocket API
+2022-08-04 16:39:26.320  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Atmosphere Framework 2.7.3.slf4jvaadin4 started.
+2022-08-04 16:39:26.322  INFO 21596 --- [restartedMain] org.atmosphere.cpr.AtmosphereFramework   : Installed AtmosphereInterceptor  Track Message Size Interceptor using | with priority BEFORE_DEFAULT 
+2022-08-04 16:39:26.358  INFO 21596 --- [restartedMain] c.v.f.s.DefaultDeploymentConfiguration   : Vaadin is running in production mode.
+2022-08-04 16:39:26.381  INFO 21596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-08-04 16:39:26.399  INFO 21596 --- [restartedMain] o.vaadin.covid.CovidTrackerApplication   : Started CovidTrackerApplication in 4.394 seconds (JVM running for 10.052)
+2022-08-04 16:39:27.100 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.103 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.104  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : StatusDataProvider fetched Status from: 2022-08-04
+2022-08-04 16:39:27.224 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.229 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.230  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandMVDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:39:27.304 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.306 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.307  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandBerlinDataProvider fetched BLBer from: 2022-08-04
+2022-08-04 16:39:27.385 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.395 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.396  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BundeslandSachsenDataProvider fetched BLMV from: 2022-08-04
+2022-08-04 16:39:27.502 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.513 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.513  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : BRDDataProvider fetched BRD from: 2022-08-04
+2022-08-04 16:39:27.697 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.718 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.718  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : VRDataProvider fetched MV from: 2022-08-04
+2022-08-04 16:39:27.828 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:27.901 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:27.901  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : GDataProvider fetched LandkreisG from: 2022-08-04
+2022-08-04 16:39:28.008 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:28.024 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:28.024  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : KSR data fetched from: 2022-08-04
+2022-08-04 16:39:28.167 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:28.198 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:28.198  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : LandkreisLwP fetched from: 2022-08-04
+2022-08-04 16:39:28.340 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:28.381 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:28.381  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : MS data fetched from: 2022-08-04
+2022-08-04 16:39:28.628 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:28.639 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:28.640  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : NWM data fetched from: 2022-08-04
+2022-08-04 16:39:28.750 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:28.819 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:28.819  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : R data fetched from: 2022-08-04
+2022-08-04 16:39:28.979 DEBUG 21596 --- [scheduling-1] org.vaadin.covid.backend.DataCaller      : Fetched data with response code 200
+2022-08-04 16:39:29.035 DEBUG 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : DataProvider set formatted data to null
+2022-08-04 16:39:29.035  INFO 21596 --- [scheduling-1] o.v.c.backend.dataProvider.DataProvider  : SNDataProvider fetched SN from: 2022-08-04
+2022-08-04 16:40:00.031  INFO 21596 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-04 16:40:00.032  INFO 21596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-04 16:40:00.033  INFO 21596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-04 16:40:00.119  INFO 21596 --- [http-nio-8080-exec-1] c.vaadin.flow.spring.SpringInstantiator  : The number of beans implementing 'I18NProvider' is 0. Cannot use Spring beans for I18N, falling back to the default behavior
+2022-08-04 16:40:01.715  INFO 21596 --- [http-nio-8080-exec-9] org.vaadin.covid.view.MainView           : User: CCA4BE2082631A07A111CC02CAEC5B05 entered MainViewBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+2022-08-04 16:40:03.940  INFO 21596 --- [http-nio-8080-exec-10] org.vaadin.covid.view.MainView           : User: CCA4BE2082631A07A111CC02CAEC5B05 entered MainViewBrowser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+2022-08-04 17:07:33.580  INFO 21596 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-04 17:07:33.581  INFO 21596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-04 17:07:33.586  INFO 21596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
