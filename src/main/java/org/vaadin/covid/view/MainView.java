@@ -18,6 +18,10 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.*;
 import lombok.extern.log4j.Log4j2;
+import org.apache.catalina.Server;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.integration.IntegrationProperties;
+import org.springframework.boot.autoconfigure.rsocket.RSocketProperties;
 import org.vaadin.covid.ownComponents.Divider;
 import org.vaadin.covid.repository.StatusRepository;
 
@@ -36,8 +40,6 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
     public MainView(StatusRepository statusRepository) {
         this.statusRepository = statusRepository;
 
-        // implemet Services
-
         // Use the drawer for the menu
         setPrimarySection(Section.DRAWER);
 
@@ -55,7 +57,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
 
         //Configure layout wehere last Update will be displayed
         lastUpdate.setId("lastUpdate");
-        lastUpdate.add(new Span("Letztes Update: " + getLastUpdate().toString()));
+        lastUpdate.add(new Span("Update: " + getLastUpdate().toString()));
         lastUpdate.getStyle().set("margin-left", "auto");
 
         // Configure styling for the header
@@ -121,7 +123,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
     private Component[] createMenuItems() {
         return new Tab[]{
                 createTab("Home", HomeView.class),
-                createTab("Daten abrufen", DataView.class),
+                createTab("Bundesrepublik Deutschland", BrdView.class),
         };
     }
 
@@ -134,7 +136,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
 
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
-        log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " entered MainView" + "Browser: " + VaadinSession.getCurrent().getBrowser().getBrowserApplication());
+        log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " entered MainView -- " + "Device information: " + VaadinSession.getCurrent().getBrowser().getBrowserApplication());
     }
 
     @Override
