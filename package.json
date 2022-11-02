@@ -114,11 +114,9 @@
     "@vaadin/vaadin-virtual-list": "23.0.7",
     "@vaadin/vertical-layout": "23.0.7",
     "@vaadin/virtual-list": "23.0.7",
-    "apexcharts": "3.26.3",
     "construct-style-sheets-polyfill": "3.0.4",
     "date-fns": "2.28.0",
-    "lit": "2.1.4",
-    "onecolor": "3.1.0"
+    "lit": "2.1.4"
   },
   "devDependencies": {
     "chokidar": "^3.5.0",
@@ -255,11 +253,9 @@
       "@vaadin/vaadin-virtual-list": "23.0.7",
       "@vaadin/vertical-layout": "23.0.7",
       "@vaadin/virtual-list": "23.0.7",
-      "apexcharts": "3.26.3",
       "construct-style-sheets-polyfill": "3.0.4",
       "date-fns": "2.28.0",
-      "lit": "2.1.4",
-      "onecolor": "3.1.0"
+      "lit": "2.1.4"
     },
     "devDependencies": {
       "chokidar": "^3.5.0",
@@ -283,7 +279,7 @@
       "workbox-precaching": "6.5.0",
       "workbox-webpack-plugin": "6.5.0"
     },
-    "hash": "401da351103e3b999e2dadf7a813ca24dcc8448c5c1907a79f5917becbd95481"
+    "hash": "8d1ea2acbae2c3225cfe1680f19005c2d73fe796ec0fd87c1f8998f726db4046"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -400,8 +396,6 @@
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
     "date-fns": "$date-fns",
-    "chokidar": "$chokidar",
-    "apexcharts": "$apexcharts",
-    "onecolor": "$onecolor"
+    "chokidar": "$chokidar"
   }
 }
