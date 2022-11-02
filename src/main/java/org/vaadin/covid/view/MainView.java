@@ -11,17 +11,12 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.*;
 import lombok.extern.log4j.Log4j2;
-import org.apache.catalina.Server;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties;
-import org.springframework.boot.autoconfigure.rsocket.RSocketProperties;
 import org.vaadin.covid.ownComponents.Divider;
 import org.vaadin.covid.repository.StatusRepository;
 
@@ -31,8 +26,7 @@ import java.util.Optional;
 
 @PermitAll
 @Log4j2
-@PWA(name = "Covid Tracker", shortName = "Covid Tracker")
-public class MainView extends AppLayout implements BeforeEnterObserver, AppShellConfigurator {
+public class MainView extends AppLayout implements BeforeEnterObserver  {
     StatusRepository statusRepository;
     private final Tabs menu;
     private H1 viewTitle;
@@ -62,7 +56,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
 
         // Configure styling for the header
         layout.setId("header");
-        layout.getThemeList().set("dark", true);
+        //layout.getThemeList().set("dark", true);
         layout.setWidth(100f, Unit.PERCENTAGE);
         layout.setSpacing(false);
         layout.setAlignItems(FlexComponent.Alignment.CENTER);
@@ -88,23 +82,20 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
         VerticalLayout layout = new VerticalLayout();
 
         // Configure styling for the drawer
-        layout.setSizeFull();
         layout.setPadding(false);
         layout.setSpacing(false);
         layout.getThemeList().set("spacing-s", true);
         layout.setAlignItems(FlexComponent.Alignment.STRETCH);
 
-        //Import Logo
-
-
         HorizontalLayout logoLayout = new HorizontalLayout();
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        Image logo = new Image("img/Logo olech2412 Vector.png", "logo");
-        logo.addClickListener(e -> getUI().ifPresent(ui -> ui.navigate("")));
-        logo.setTitle("Logo olech2412");
-        logo.setSizeFull();
-        logoLayout.add(logo);
+        StreamResource logoStream = new StreamResource("Logo olech2412 Vector.png", () -> getClass().getResourceAsStream("/static/img/Logo olech2412 Vector.png"));
+        Image logoImage = new Image(logoStream, "Covid-19");
+        logoImage.addClickListener(e -> getUI().ifPresent(ui -> ui.navigate("")));
+        logoImage.setTitle("Logo olech2412");
+        logoImage.setSizeFull();
+        logoLayout.add(logoImage);
 
         // Display the logo and the menu in the drawer
         layout.add(logoLayout,new Divider(), menu);
@@ -114,7 +105,7 @@ public class MainView extends AppLayout implements BeforeEnterObserver, AppShell
     private Tabs createMenu() {
         final Tabs tabs = new Tabs();
         tabs.setOrientation(Tabs.Orientation.VERTICAL);
-        tabs.addThemeVariants(TabsVariant.LUMO_MINIMAL);
+        tabs.addThemeVariants(TabsVariant.LUMO_CENTERED);
         tabs.setId("tabs");
         tabs.add(createMenuItems());
         return tabs;

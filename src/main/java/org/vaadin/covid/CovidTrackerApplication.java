@@ -1,27 +1,18 @@
 package org.vaadin.covid;
 
+import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.theme.Theme;
 import lombok.extern.log4j.Log4j2;
-import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.boot.context.event.ApplicationStartedEvent;
-import org.springframework.boot.context.event.ApplicationStartingEvent;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.event.EventListener;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.vaadin.covid.backend.DataCaller;
 import org.vaadin.covid.backend.RequestedURLEnum;
-import org.vaadin.covid.backend.dataProvider.DataProvider;
 import org.vaadin.covid.jpa.Brd;
 import org.vaadin.covid.jpa.Status;
 import org.vaadin.covid.jpa.bundesland.BundeslandBerlin;
@@ -29,20 +20,17 @@ import org.vaadin.covid.jpa.bundesland.BundeslandFreistaatSachsen;
 import org.vaadin.covid.jpa.bundesland.BundeslandMV;
 import org.vaadin.covid.jpa.landkreis.*;
 import org.vaadin.covid.repository.*;
-
-import java.io.IOException;
-import java.net.InetAddress;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 @EntityScan
 @EnableJpaRepositories
 @EnableScheduling
 @Log4j2
-public class CovidTrackerApplication {
+@Theme(value = "covidTracker-theme")
+@PWA(name = "Covid Tracker", shortName = "Covid Tracker")
+public class CovidTrackerApplication implements AppShellConfigurator {
 
     @Autowired
     BundeslandMVRepository bundeslandMVRepository;
@@ -87,7 +75,7 @@ public class CovidTrackerApplication {
      * Fetches Data every 4 hours and on startup.
      */
     @Scheduled(fixedRate = 14400000)
-    public void onApplicationReadyEvent() throws JSONException, IOException, InterruptedException {
+    public void onApplicationReadyEvent() {
 
         if(statusRepository.findAllByCreationDate(LocalDate.now()).isEmpty() && LocalTime.now().getHour() >= 4){
             try{

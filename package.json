@@ -13,7 +13,7 @@
     "@vaadin/avatar": "23.0.7",
     "@vaadin/avatar-group": "23.0.7",
     "@vaadin/board": "23.0.7",
-    "@vaadin/bundles": "23.1.6",
+    "@vaadin/bundles": "23.2.6",
     "@vaadin/button": "23.0.7",
     "@vaadin/charts": "23.0.7",
     "@vaadin/checkbox": "23.0.7",
@@ -155,7 +155,7 @@
       "@vaadin/avatar": "23.0.7",
       "@vaadin/avatar-group": "23.0.7",
       "@vaadin/board": "23.0.7",
-      "@vaadin/bundles": "23.1.6",
+      "@vaadin/bundles": "23.2.6",
       "@vaadin/button": "23.0.7",
       "@vaadin/charts": "23.0.7",
       "@vaadin/checkbox": "23.0.7",
@@ -283,7 +283,7 @@
       "workbox-precaching": "6.5.0",
       "workbox-webpack-plugin": "6.5.0"
     },
-    "hash": "9772e18f2f7b23286aed4b99c186e89b124fcd51d1ecbda1bfe0038708624494"
+    "hash": "401da351103e3b999e2dadf7a813ca24dcc8448c5c1907a79f5917becbd95481"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
