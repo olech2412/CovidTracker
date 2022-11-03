@@ -17,12 +17,11 @@ class HomeViewTest {
     public void sourceAnchor() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
         var driver = new ChromeDriver(options);
         try {
             driver.get("http://localhost:443");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())
-                    .until(titleIs("Home"));
+                    .until(titleIs("CovidTracker"));
             var anchor = driver.findElement(By.linkText("Datenquelle"));
             anchor.click();
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds());

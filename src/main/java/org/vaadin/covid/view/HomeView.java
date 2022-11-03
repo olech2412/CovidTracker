@@ -67,7 +67,7 @@ public class HomeView extends VerticalLayout {
                 .withSubtitle(TitleSubtitleBuilder.get()
                         .withText("Verlauf der 7-Tage-Inzidenz")
                         .withAlign(Align.left).build())
-                .withLabels(brdRepository.findAll().stream().map(Brd::getCreationDate).map(LocalDate::toString).toArray(String[]::new))
+                .withLabels(data.stream().map(Brd::getCreationDate).map(LocalDate::toString).toArray(String[]::new))
                 .withXaxis(XAxisBuilder.get()
                         .withType(XAxisType.datetime).build())
                 .withYaxis(YAxisBuilder.get()
