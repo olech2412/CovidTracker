@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static java.time.Duration.ofSeconds;
@@ -15,7 +16,9 @@ class HomeViewTest {
     @Test
     public void sourceAnchor() {
         WebDriverManager.chromedriver().setup();
-        var driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        var driver = new ChromeDriver(options);
         try {
             driver.get("http://localhost:443");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())

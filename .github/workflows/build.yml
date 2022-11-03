@@ -21,6 +21,6 @@ jobs:
       - name: Install Chrome Webdriver
         run: |
           chmod +x ./scripts/InstallChrome.sh
-          ./scripts/InstallChrome.sh
+            ./scripts/InstallChrome.sh
       - name: Build project with Maven
         run: mvn -B package --file pom.xml
