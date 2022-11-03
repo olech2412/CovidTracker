@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 class HomeViewTest {
     @Test
-    public void test() {
+    public void sourceAnchor() {
         WebDriverManager.chromedriver().setup();
         var driver = new ChromeDriver();
         try {
