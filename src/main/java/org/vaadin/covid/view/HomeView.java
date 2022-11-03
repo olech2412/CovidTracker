@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-@PageTitle("Home")
+@PageTitle("CovidTracker")
 @Route(value = "", layout = MainView.class)
 public class HomeView extends VerticalLayout {
     StatusRepository statusRepository;

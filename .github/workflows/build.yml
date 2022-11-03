@@ -19,8 +19,6 @@ jobs:
           java-version: 11
 
       - name: Install Chrome Webdriver
-        run: |
-          chmod +x ./scripts/InstallChrome.sh
-            ./scripts/InstallChrome.sh
+        run: sudo apt-get install chromium-chromedriver
       - name: Build project with Maven
         run: mvn -B package --file pom.xml

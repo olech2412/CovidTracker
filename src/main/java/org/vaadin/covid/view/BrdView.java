@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Daten Bundesrepublik Deutschland")
+@PageTitle("CovidTracker")
 @Route(value = "bundesrepublikDeutschland", layout = MainView.class)
 public class BrdView extends VerticalLayout {
     public BrdView() {

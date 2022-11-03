@@ -90,10 +90,10 @@ public class MainView extends AppLayout implements BeforeEnterObserver  {
         HorizontalLayout logoLayout = new HorizontalLayout();
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        StreamResource logoStream = new StreamResource("Logo olech2412 Vector.png", () -> getClass().getResourceAsStream("/static/img/Logo olech2412 Vector.png"));
-        Image logoImage = new Image(logoStream, "Covid-19");
+        StreamResource logoStream = new StreamResource("icon.png", () -> getClass().getResourceAsStream("/static/img/icon.png"));
+        Image logoImage = new Image(logoStream, "Logo");
         logoImage.addClickListener(e -> getUI().ifPresent(ui -> ui.navigate("")));
-        logoImage.setTitle("Logo olech2412");
+        logoImage.setTitle("Logo christopho");
         logoImage.setSizeFull();
         logoLayout.add(logoImage);
 
