@@ -15,12 +15,15 @@ import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.vaadin.covid.jpa.Brd;
 import org.vaadin.covid.repository.BrdRepository;
 import org.vaadin.covid.repository.StatusRepository;
+import org.vaadin.covid.staticResources.StaticTextMainView;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -37,9 +40,19 @@ public class HomeView extends VerticalLayout {
         this.statusRepository = statusRepository;
 
         setSizeFull();
-        add(new H1("Willkommen beim CovidTracker"), new Text("Über das Menü auf der linken Seite können Sie unter dem Reiter \"Daten abrufen\" die gewünschten Daten abfragen"), new Anchor("https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4", "Datenquelle"));
+        configureText();
+        add(new Anchor("https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4", "Datenquelle"));
         buildInzidenzChart();
 
+    }
+
+    private void configureText() {
+        H1 h1 = new H1(StaticTextMainView.MAIN_VIEW_HEADER);
+        h1.setId("main-view-header");
+        Label mainViewDescription = new Label(StaticTextMainView.MAIN_VIEW_DESCRIPTION);
+        mainViewDescription.setId("main-view-description");
+
+        add(h1, mainViewDescription);
     }
 
     private void buildInzidenzChart() {
