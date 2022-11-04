@@ -19,7 +19,7 @@ class HomeViewTest {
         ChromeOptions options = new ChromeOptions();
         var driver = new ChromeDriver(options);
         try {
-            driver.get("http://localhost:443");
+            driver.get("http://girado.v6.rocks:443");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())
                     .until(titleIs("CovidTracker"));
             var anchor = driver.findElement(By.linkText("Datenquelle"));
@@ -36,7 +36,7 @@ class HomeViewTest {
         ChromeOptions options = new ChromeOptions();
         var driver = new ChromeDriver(options);
         try {
-            driver.get("http://localhost:443");
+            driver.get("http://girado.v6.rocks:443");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())
                     .until(titleIs("CovidTracker"));
 
