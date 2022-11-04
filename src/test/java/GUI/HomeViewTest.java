@@ -17,6 +17,7 @@ class HomeViewTest {
     public void dataSourceAnchor() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
         var driver = new ChromeDriver(options);
         try {
             driver.get("http://girado.v6.rocks:443");
@@ -34,6 +35,7 @@ class HomeViewTest {
     public void textTest() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
         var driver = new ChromeDriver(options);
         try {
             driver.get("http://girado.v6.rocks:443");
