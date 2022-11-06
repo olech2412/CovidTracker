@@ -34,7 +34,7 @@ jobs:
         run: mvn -D test="test.java.Backend.**"
 
   job3:
-    needs: job1, job2
+    needs: job1 && job2
     name: CovidTracker GUI Test
 
     runs-on: ubuntu-latest
