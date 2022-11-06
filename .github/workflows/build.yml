@@ -18,7 +18,7 @@ jobs:
         with:
           java-version: 11
       - name: Run backend Tests
-        run: mvn test="src/test/java/Backend/*"
+        run: mvn -D test="test.java.Backend.**"
 
   job2:
     needs: job1
@@ -37,7 +37,7 @@ jobs:
         uses: nanasess/setup-chromedriver@v1.1.0
 
       - name: Run GUI Tests
-        run: mvn test="src/test/java/GUI/*""
+        run: mvn -D test="test.java.GUI.**""
 
       - name: Generate test report
         run: mvn surefire-report:report
