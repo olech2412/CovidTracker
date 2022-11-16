@@ -29,7 +29,7 @@ import java.time.LocalTime;
 @EnableScheduling
 @Log4j2
 @Theme(value = "covidTracker-theme")
-@PWA(name = "Covid Tracker", shortName = "Covid Tracker")
+@PWA(name = "Covid Tracker", shortName = "CovidTracker")
 public class CovidTrackerApplication implements AppShellConfigurator {
 
     @Autowired

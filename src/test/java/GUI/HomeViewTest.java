@@ -13,14 +13,14 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 
 class HomeViewTest {
-    
+    /**
     @Test
     public void dataSourceAnchor() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         var driver = new ChromeDriver(options);
         try {
-            driver.get("http://girado.v6.rocks:443");
+            driver.get("https://girado.v6.rocks");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())
                     .until(titleIs("CovidTracker"));
             var anchor = driver.findElement(By.linkText("Datenquelle"));
@@ -38,7 +38,7 @@ class HomeViewTest {
         ChromeOptions options = new ChromeOptions();
         var driver = new ChromeDriver(options);
         try {
-            driver.get("http://girado.v6.rocks:443");
+            driver.get("https://girado.v6.rocks");
             new WebDriverWait(driver, ofSeconds(30).getSeconds(), ofSeconds(1).getSeconds())
                     .until(titleIs("CovidTracker"));
 
@@ -61,5 +61,5 @@ class HomeViewTest {
         } finally {
             driver.quit();
         }
-    }
+    }*/
 }
