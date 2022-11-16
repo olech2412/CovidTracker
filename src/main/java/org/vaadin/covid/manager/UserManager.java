@@ -43,6 +43,12 @@ public class UserManager{
         usersRepository.delete(user);
     }
 
+    public void updateUser(Users user) {
+        log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " updateUser: " + user.getUsername());
+        usersRepository.save(user);
+    }
+
+
     public List<Users> findAll() {
         log.debug("User: " + VaadinSession.getCurrent().getSession().getId() + " findAll");
         return usersRepository.findAll();

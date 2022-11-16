@@ -2,6 +2,8 @@ package org.vaadin.covid.view;
 
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.contextmenu.ContextMenu;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -9,6 +11,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.userdetails.User;
+import org.vaadin.covid.dialogs.DeleteConfirmationDialog;
 import org.vaadin.covid.dialogs.NewUserDialog;
 import org.vaadin.covid.jpa.authentification.Users;
 import org.vaadin.covid.layouts.MainLayout;
@@ -19,9 +24,12 @@ import javax.annotation.security.RolesAllowed;
 @RolesAllowed("ADMIN")
 @PageTitle("CovidTracker")
 @Route(value = "userManagement", layout = MainLayout.class)
+@Log4j2
 public class UserManagement extends VerticalLayout {
 
     private final UserManager userManager;
+    private final Grid<Users> grid = new Grid<>();
+    Users selectedUser = null;
 
     public UserManagement(UserManager userManager) {
         this.userManager = userManager;
@@ -41,7 +49,62 @@ public class UserManagement extends VerticalLayout {
         horizontalLayoutAddButton.add(buttonAddUser);
         add(horizontalLayoutAddButton);
 
-        Grid<Users> grid = new Grid<>();
+        configureGrid(grid);
+        prepareContextMenu(grid);
+
+
+        add(grid);
+    }
+
+    private void prepareContextMenu(Grid<Users> grid) {
+        ContextMenu contextMenu = new ContextMenu();
+        contextMenu.setTarget(grid);
+        contextMenu.addItem("Benutzer löschen", e -> {
+            if (selectedUser != null) {
+                openUserDeleteDialog(selectedUser);
+                grid.setItems(userManager.findAll());
+            }else{
+                log.debug("No user selected");
+            }
+        });
+        contextMenu.addItem("Benutzer bearbeiten", e -> {
+            if (selectedUser != null) {
+                //openUserEditDialog(selectedUser);
+                grid.setItems(userManager.findAll());
+            }else{
+                log.debug("No user selected");
+            }
+        });
+        contextMenu.addItem("Benutzer aktivieren/deaktivieren", e -> {
+            if (selectedUser != null) {
+                Users user = selectedUser;
+                user.setEnabled(!selectedUser.getEnabled());
+                userManager.updateUser(user);
+                grid.setItems(userManager.findAll());
+            }else{
+                log.debug("No user selected");
+            }
+        });
+    }
+
+    /**
+    private void openUserEditDialog(Users selectedUser) {
+        NewUserEditDialog newUserEditDialog = new NewUserEditDialog(selectedUser, userManager);
+        newUserEditDialog.open();
+    }*/
+
+    private void openUserDeleteDialog(Users selectedUser) {
+        DeleteConfirmationDialog newUserDeleteDialog = new DeleteConfirmationDialog(selectedUser.getUsername());
+        newUserDeleteDialog.deleteAddClickListener(buttonClickEvent -> {
+            userManager.deleteUser(selectedUser);
+            grid.setItems(userManager.findAll());
+            newUserDeleteDialog.close();
+        });
+        newUserDeleteDialog.open();
+
+    }
+
+    private void configureGrid(Grid<Users> grid) {
         grid.setAllRowsVisible(true);
         grid.setNestedNullBehavior(Grid.NestedNullBehavior.ALLOW_NULLS);
         grid.setColumnReorderingAllowed(true);
@@ -49,13 +112,20 @@ public class UserManagement extends VerticalLayout {
         grid.setHeight(100f, Unit.PERCENTAGE);
         grid.addColumn(Users::getUsername).setHeader("Nutzer").setAutoWidth(true);
         grid.addColumn(Users::getRole).setHeader("Rolle").setAutoWidth(true);
+        grid.setSelectionMode(Grid.SelectionMode.SINGLE);
 
         grid.addComponentColumn(users -> createPermissionIcon(users.getEnabled()))
                 .setHeader("Freigeschaltet");
 
         grid.addColumn(Users::getCreationDate).setHeader("Erstellt am").setAutoWidth(true);
         grid.addColumn(Users::getLastLogin).setHeader("Zuletzt gesehen").setAutoWidth(true);
-        add(grid);
+        grid.addSelectionListener(selectionEvent -> {
+            if (selectionEvent.getFirstSelectedItem().isPresent()) {
+                selectedUser = selectionEvent.getFirstSelectedItem().get();
+            } else {
+                selectedUser = null;
+            }
+        });
     }
 
     private void openUserDialog() {

@@ -33,6 +33,7 @@ public class NewUserDialog extends Dialog {
 
         save.addClickListener(e -> {
             saveNewUser();
+            close();
         });
 
         cancel.addClickListener(e -> {
