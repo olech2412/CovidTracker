@@ -7,6 +7,8 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.EmailField;
@@ -35,6 +37,7 @@ public class NewUserDialog extends Dialog {
             saveNewUser();
             close();
         });
+        save.setEnabled(false);
 
         cancel.addClickListener(e -> {
             close();
@@ -43,6 +46,7 @@ public class NewUserDialog extends Dialog {
         setWidth(50f, Unit.PERCENTAGE);
         setHeight(50f, Unit.PERCENTAGE);
         setCloseOnOutsideClick(false);
+
     }
 
     private void configureComponents() {
@@ -54,18 +58,41 @@ public class NewUserDialog extends Dialog {
         role.setItems("ROLE_USER", "ROLE_ADMIN");
         role.setValue("ROLE_USER");
         role.setErrorMessage("Bitte wählen Sie eine Rolle aus");
+        role.setRequiredIndicatorVisible(true);
+        role.addValueChangeListener(e -> {
+            save.setEnabled(!userName.getValue().isEmpty() && !email.getValue().isEmpty() && !role.getValue().isEmpty());
+        });
+
 
         userName.setRequired(true);
         userName.setRequiredIndicatorVisible(true);
         userName.setErrorMessage("Bitte geben Sie einen Nutzernamen ein");
         userName.setMaxLength(50);
+        userName.addInputListener(e -> {
+            save.setEnabled(!userName.getValue().isEmpty() && !email.getValue().isEmpty() && !role.getValue().isEmpty());
+        });
+        userName.addValueChangeListener(e -> {
+            save.setEnabled(!userName.getValue().isEmpty() && !email.getValue().isEmpty() && !role.getValue().isEmpty());
+        });
 
         email.setRequiredIndicatorVisible(true);
         email.setErrorMessage("Bitte geben Sie eine gültige E-Mail Adresse ein.");
         email.setMaxLength(100);
+        email.addInputListener(e -> {
+            save.setEnabled(!userName.getValue().isEmpty() && !email.getValue().isEmpty() && !role.getValue().isEmpty());
+        });
+        email.addValueChangeListener(e -> {
+            save.setEnabled(!userName.getValue().isEmpty() && !email.getValue().isEmpty() && !role.getValue().isEmpty());
+        });
     }
 
     private void saveNewUser() {
+        if(role.isEmpty() || userName.isEmpty() || email.isEmpty()) {
+            Notification notification = new Notification("Bitte füllen Sie alle Felder aus.", 3000, Notification.Position.BOTTOM_START);
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+            notification.open();
+            return;
+        }
         Users user = new Users();
         user.setUsername(userName.getValue());
         user.setRole(role.getValue());
