@@ -1,4 +1,4 @@
-package org.vaadin.covid.dialogs;
+package org.vaadin.covid.dialogsUtils;
 
 import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.Unit;
@@ -11,14 +11,14 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 
 public class DeleteConfirmationDialog extends Dialog {
 
-    public static Button abort = new Button("Abbrechen");
-    public static Button delete = new Button("Löschen");
+    public Button abort = new Button("Abbrechen");
+    public Button delete = new Button("Löschen");
 
 
     public DeleteConfirmationDialog(String deleteElement) {
 
         configureComponents();
-        add(createDialogLayout(deleteElement));
+        add(createDialogLayout(deleteElement, delete, abort));
 
         setWidth(50f, Unit.PERCENTAGE);
         setHeight(40f, Unit.PERCENTAGE);
@@ -39,7 +39,7 @@ public class DeleteConfirmationDialog extends Dialog {
 
 
 
-    private static FormLayout createDialogLayout(String deleteElement) {
+    private static FormLayout createDialogLayout(String deleteElement, Button delete, Button abort) {
         FormLayout dialogLayout = new FormLayout();
         dialogLayout.add(new H1("Möchtest du " + deleteElement + " wirklich löschen?"));
         dialogLayout.add(new Label("Bitte bestätigen Sie die Löschung. Diese Aktion kann nicht rückgängig " +

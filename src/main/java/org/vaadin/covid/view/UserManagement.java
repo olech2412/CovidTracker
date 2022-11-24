@@ -3,7 +3,6 @@ package org.vaadin.covid.view;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.contextmenu.ContextMenu;
-import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -12,12 +11,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.security.core.userdetails.User;
-import org.vaadin.covid.dialogs.DeleteConfirmationDialog;
-import org.vaadin.covid.dialogs.NewUserDialog;
+import org.vaadin.covid.dialogsUtils.DeleteConfirmationDialog;
+import org.vaadin.covid.dialogsUtils.authentificationDialogs.EditUserDialog;
+import org.vaadin.covid.dialogsUtils.authentificationDialogs.NewUserDialog;
 import org.vaadin.covid.jpa.authentification.Users;
 import org.vaadin.covid.layouts.MainLayout;
 import org.vaadin.covid.manager.UserManager;
+import org.vaadin.covid.ownComponents.GridOperations;
 
 import javax.annotation.security.RolesAllowed;
 
@@ -25,7 +25,7 @@ import javax.annotation.security.RolesAllowed;
 @PageTitle("CovidTracker")
 @Route(value = "userManagement", layout = MainLayout.class)
 @Log4j2
-public class UserManagement extends VerticalLayout {
+public class UserManagement extends VerticalLayout implements GridOperations {
 
     private final UserManager userManager;
     private final Grid<Users> grid = new Grid<>();
@@ -45,7 +45,8 @@ public class UserManagement extends VerticalLayout {
         HorizontalLayout horizontalLayoutAddButton = new HorizontalLayout();
         Button buttonAddUser = new Button("Neuer Benutzer");
         buttonAddUser.setIcon(new Icon(VaadinIcon.PLUS));
-        buttonAddUser.addClickListener(buttonClickEvent -> {openUserDialog();});
+        buttonAddUser.addClickListener(buttonClickEvent -> {
+            openNewUserDialog();});
         horizontalLayoutAddButton.add(buttonAddUser);
         add(horizontalLayoutAddButton);
 
@@ -69,8 +70,7 @@ public class UserManagement extends VerticalLayout {
         });
         contextMenu.addItem("Benutzer bearbeiten", e -> {
             if (selectedUser != null) {
-                //openUserEditDialog(selectedUser);
-                grid.setItems(userManager.findAll());
+                openUserEditDialog(selectedUser);
             }else{
                 log.debug("No user selected");
             }
@@ -80,24 +80,26 @@ public class UserManagement extends VerticalLayout {
                 Users user = selectedUser;
                 user.setEnabled(!selectedUser.getEnabled());
                 userManager.updateUser(user);
-                grid.setItems(userManager.findAll());
+                update(user);
             }else{
                 log.debug("No user selected");
             }
         });
     }
 
-    /**
     private void openUserEditDialog(Users selectedUser) {
-        NewUserEditDialog newUserEditDialog = new NewUserEditDialog(selectedUser, userManager);
-        newUserEditDialog.open();
-    }*/
+        EditUserDialog editUserDialog = new EditUserDialog(userManager, selectedUser, grid);
+        editUserDialog.addDialogCloseActionListener(e -> {
+            update(selectedUser);
+        });
+        editUserDialog.open();
+    }
 
     private void openUserDeleteDialog(Users selectedUser) {
         DeleteConfirmationDialog newUserDeleteDialog = new DeleteConfirmationDialog(selectedUser.getUsername());
         newUserDeleteDialog.deleteAddClickListener(buttonClickEvent -> {
             userManager.deleteUser(selectedUser);
-            grid.setItems(userManager.findAll());
+            delete(selectedUser);
             newUserDeleteDialog.close();
         });
         newUserDeleteDialog.open();
@@ -119,17 +121,16 @@ public class UserManagement extends VerticalLayout {
 
         grid.addColumn(Users::getCreationDate).setHeader("Erstellt am").setAutoWidth(true);
         grid.addColumn(Users::getLastLogin).setHeader("Zuletzt gesehen").setAutoWidth(true);
-        grid.addSelectionListener(selectionEvent -> {
-            if (selectionEvent.getFirstSelectedItem().isPresent()) {
-                selectedUser = selectionEvent.getFirstSelectedItem().get();
-            } else {
-                selectedUser = null;
+
+        grid.addItemClickListener(itemClick -> {
+            if (itemClick.getItem() != null) {
+                selectedUser = itemClick.getItem();
             }
         });
     }
 
-    private void openUserDialog() {
-        NewUserDialog newUserDialog = new NewUserDialog(userManager);
+    private void openNewUserDialog() {
+        NewUserDialog newUserDialog = new NewUserDialog(userManager, grid);
         newUserDialog.open();
     }
 
@@ -153,5 +154,29 @@ public class UserManagement extends VerticalLayout {
         // Tooltip
         icon.getElement().setAttribute("title", label);
         return icon;
+    }
+
+    /**
+     * Updates the grid with the new data
+     */
+    @Override
+    public void save(Object saveElement) {
+
+    }
+
+    /**
+     * Can be used to update the grid after a delete
+     */
+    @Override
+    public void delete(Object deleteElement) {
+        grid.getDataProvider().refreshItem((Users) deleteElement);
+    }
+
+    /**
+     * Updates the grid after a change in the database
+     */
+    @Override
+    public void update(Object updateElement) {
+        grid.getDataProvider().refreshItem((Users) updateElement);
     }
 }

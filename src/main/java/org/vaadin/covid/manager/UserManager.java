@@ -1,5 +1,7 @@
 package org.vaadin.covid.manager;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.server.VaadinSession;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +54,14 @@ public class UserManager{
     public List<Users> findAll() {
         log.debug("User: " + VaadinSession.getCurrent().getSession().getId() + " findAll");
         return usersRepository.findAll();
+    }
+
+    public void resetPassword(Users user) {
+        log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " resetPassword: " + user.getUsername());
+        user.setPassword(new BCryptPasswordEncoder().encode("Start-1234!"));
+        usersRepository.save(user);
+        Notification resetSuccess = new Notification("Passwort erfolgreich zurückgesetzt -> Start-1234!", 3000, Notification.Position.BOTTOM_START);
+        resetSuccess.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+        resetSuccess.open();
     }
 }
