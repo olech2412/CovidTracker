@@ -1,6 +1,7 @@
 package org.vaadin.covid.dialogsUtils.authentificationDialogs;
 
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.Unit;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
@@ -17,7 +18,6 @@ import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextField;
 import org.vaadin.covid.jpa.authentification.Users;
 import org.vaadin.covid.manager.UserManager;
-import org.vaadin.covid.ownComponents.GridOperations;
 
 
 public class NewUserDialog extends Dialog {
@@ -99,7 +99,8 @@ public class NewUserDialog extends Dialog {
             user.setUsername(userName.getValue());
             user.setRole(role.getValue());
             user.setEmail(email.getValue());
-            userManager.saveUser(user);
+            user.setLastIp(UI.getCurrent().getSession().getBrowser().getAddress());
+            userManager.createNewUser(user);
         }
     }
 

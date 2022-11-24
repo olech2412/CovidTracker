@@ -6,4 +6,5 @@ import org.vaadin.covid.jpa.authentification.Users;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
+    Users findByUsername(String username);
 }

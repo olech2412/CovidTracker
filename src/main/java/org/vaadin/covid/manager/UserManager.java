@@ -30,12 +30,17 @@ public class UserManager{
         this.usersRepository = usersRepository;
     }
 
-    public void saveUser(Users user) {
+    public void createNewUser(Users user) {
         log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " saveUser: " + user.getUsername());
         user.setPassword(new BCryptPasswordEncoder().encode("Start-1234!"));
         user.setEnabled(true);
         user.setCreationDate(LocalDate.now());
         user.setLastLogin(LocalDateTime.now());
+        usersRepository.save(user);
+    }
+
+    public void saveUser(Users user) {
+        log.info("User: " + VaadinSession.getCurrent().getSession().getId() + " saveUser: " + user.getUsername());
         usersRepository.save(user);
     }
 
@@ -63,5 +68,9 @@ public class UserManager{
         Notification resetSuccess = new Notification("Passwort erfolgreich zurückgesetzt -> Start-1234!", 3000, Notification.Position.BOTTOM_START);
         resetSuccess.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
         resetSuccess.open();
+    }
+
+    public Users getUserByUsername(String username) {
+        return usersRepository.findByUsername(username);
     }
 }

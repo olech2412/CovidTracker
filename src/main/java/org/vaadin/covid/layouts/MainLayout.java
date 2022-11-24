@@ -23,15 +23,19 @@ import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.vaadin.covid.jpa.authentification.Users;
+import org.vaadin.covid.manager.UserManager;
 import org.vaadin.covid.ownComponents.Divider;
 import org.vaadin.covid.repository.StatusRepository;
 import org.vaadin.covid.security.SecurityService;
 import org.vaadin.covid.view.BrdView;
 import org.vaadin.covid.view.HomeView;
+import org.vaadin.covid.view.SettingsView;
 import org.vaadin.covid.view.UserManagement;
 
 import javax.annotation.security.PermitAll;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -45,9 +49,12 @@ public class MainLayout extends AppLayout implements BeforeEnterObserver  {
     @Autowired
     SecurityService securityService;
 
-    public MainLayout(StatusRepository statusRepository, SecurityService securityService) {
+    private final UserManager userManager;
+
+    public MainLayout(StatusRepository statusRepository, SecurityService securityService, UserManager userManager) {
         this.statusRepository = statusRepository;
         this.securityService = securityService;
+        this.userManager = userManager;
 
         // Use the drawer for the menu
         setPrimarySection(Section.DRAWER);
@@ -58,6 +65,8 @@ public class MainLayout extends AppLayout implements BeforeEnterObserver  {
         // Put the menu in the drawer
         menu = createMenu();
         addToDrawer(createDrawerContent(menu));
+
+        checkIPAndSetLastLogin();
 
         SystemMessagesProvider systemMessagesProvider = new SystemMessagesProvider() {
             @Override
@@ -72,6 +81,19 @@ public class MainLayout extends AppLayout implements BeforeEnterObserver  {
         VaadinSession.getCurrent().getSession().setMaxInactiveInterval(30*60);
         UI.getCurrent().getSession().getSession().setMaxInactiveInterval(30*60);
         VaadinService.getCurrent().setSystemMessagesProvider(systemMessagesProvider);
+    }
+
+    private void checkIPAndSetLastLogin() {
+        Users user = userManager.getUserByUsername(securityService.getAuthenticatedUser().getUsername());
+        if(!user.getLastIp().equals(VaadinSession.getCurrent().getBrowser().getAddress())){
+            user.setLastIp(VaadinSession.getCurrent().getBrowser().getAddress());
+            log.info("IP changed for user: " + user.getUsername());
+        }else {
+            log.info("IP not changed for user: " + securityService.getAuthenticatedUser().getUsername());
+        }
+        user.setLastLogin(LocalDateTime.now());
+        userManager.saveUser(user);
+
     }
 
     private Component createHeaderContent() {
@@ -154,6 +176,7 @@ public class MainLayout extends AppLayout implements BeforeEnterObserver  {
         List<Tab> tabs = new ArrayList<>();
         tabs.add(createTab("Home", HomeView.class));
         tabs.add(createTab("Bundesrepublik Deutschland", BrdView.class));
+        tabs.add(createTab("Einstellungen", SettingsView.class));
         if(securityService.getAuthenticatedUser().getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
             tabs.add(createTab("User Management", UserManagement.class));
         }

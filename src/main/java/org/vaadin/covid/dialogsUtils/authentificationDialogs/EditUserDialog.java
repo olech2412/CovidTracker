@@ -111,7 +111,7 @@ public class EditUserDialog extends Dialog {
             user.setUsername(userName.getValue());
             user.setRole(role.getValue());
             user.setEmail(email.getValue());
-            userManager.saveUser(user);
+            userManager.createNewUser(user);
         }
     }
 

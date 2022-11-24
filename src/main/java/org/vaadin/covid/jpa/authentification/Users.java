@@ -32,7 +32,10 @@ public class Users {
     @Column(name = "creation_date", nullable = false)
     private LocalDate creationDate;
 
-    public Users(Long userId, String username, String password, String role, Boolean enabled, LocalDateTime lastLogin, LocalDate creationDate) {
+    @Column(name = "last_ip", nullable = false)
+    private String lastIp;
+
+    public Users(Long userId, String username, String password, String role, Boolean enabled, LocalDateTime lastLogin, LocalDate creationDate, String email, String lastIp) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -40,6 +43,8 @@ public class Users {
         this.enabled = enabled;
         this.lastLogin = lastLogin;
         this.creationDate = creationDate;
+        this.email = email;
+        this.lastIp = lastIp;
     }
 
     public Users() {
@@ -108,5 +113,11 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getLastIp() {
+        return lastIp;
+    }
+    public void setLastIp(String lastIp) {
+        this.lastIp = lastIp;
     }
 }
