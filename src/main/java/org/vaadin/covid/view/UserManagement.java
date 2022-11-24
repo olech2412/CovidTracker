@@ -122,9 +122,11 @@ public class UserManagement extends VerticalLayout implements GridOperations {
         grid.addColumn(Users::getCreationDate).setHeader("Erstellt am").setAutoWidth(true);
         grid.addColumn(Users::getLastLogin).setHeader("Zuletzt gesehen").setAutoWidth(true);
 
-        grid.addItemClickListener(itemClick -> {
-            if (itemClick.getItem() != null) {
-                selectedUser = itemClick.getItem();
+        grid.addCellFocusListener(e -> {
+            if(e.getItem().isPresent()){
+                selectedUser = e.getItem().get();
+            }else {
+                log.debug("No user selected");
             }
         });
     }
