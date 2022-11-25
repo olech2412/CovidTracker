@@ -1,5 +1,6 @@
 package org.vaadin.covid.view;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.H1;
@@ -12,8 +13,10 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.vaadin.covid.dialogsUtils.ConfirmDialog;
 import org.vaadin.covid.jpa.authentification.Users;
 import org.vaadin.covid.layouts.MainLayout;
 import org.vaadin.covid.manager.UserManager;
@@ -72,15 +75,28 @@ public class SettingsView extends VerticalLayout {
 
         save.setIcon(VaadinIcon.CHECK.create());
         save.addThemeName("primary success");
+
+        //save the new Password for the current user and log out
         save.addClickListener(e -> {
-            Users user = userManager.getUserByUsername(username);
-            user.setPassword(new BCryptPasswordEncoder().encode(password.getValue()));
-            userManager.saveUser(user);
-            password.clear();
-            save.setEnabled(false);
-            Notification notification = new Notification("Passwort wurde geändert", 3000, Notification.Position.BOTTOM_START);
-            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-            notification.open();
+            ConfirmDialog confirmPasswordChangeDialog = new ConfirmDialog();
+            confirmPasswordChangeDialog.setConfirmationQuestion("Möchtest du das Password wirklich ändern?");
+            confirmPasswordChangeDialog.submit.addClickListener(passwordChangeEvent->{
+                Users user = userManager.getUserByUsername(username);
+                user.setPassword(new BCryptPasswordEncoder().encode(password.getValue()));
+                userManager.saveUser(user);
+                password.clear();
+                save.setEnabled(false);
+                Notification notification = new Notification("Passwort wurde geändert. Du wirst werden abgemeldet", 3000, Notification.Position.BOTTOM_START);
+                notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+                notification.open();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+                VaadinSession.getCurrent().getSession().invalidate();
+            });
+            confirmPasswordChangeDialog.open();
         });
 
         Users user = userManager.getUserByUsername(username);
