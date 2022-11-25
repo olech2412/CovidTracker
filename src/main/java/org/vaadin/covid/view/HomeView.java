@@ -10,9 +10,7 @@ import com.github.appreciated.apexcharts.config.stroke.Curve;
 import com.github.appreciated.apexcharts.config.subtitle.Align;
 import com.github.appreciated.apexcharts.config.xaxis.XAxisType;
 import com.github.appreciated.apexcharts.helper.Series;
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.Unit;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
@@ -20,10 +18,12 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.vaadin.covid.jpa.Brd;
+import org.vaadin.covid.layouts.MainLayout;
 import org.vaadin.covid.repository.BrdRepository;
 import org.vaadin.covid.repository.StatusRepository;
 import org.vaadin.covid.staticResources.StaticTextMainView;
 
+import javax.annotation.security.PermitAll;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -31,7 +31,8 @@ import java.util.Comparator;
 import java.util.List;
 
 @PageTitle("CovidTracker")
-@Route(value = "", layout = MainView.class)
+@PermitAll
+@Route(value = "", layout = MainLayout.class)
 public class HomeView extends VerticalLayout {
     StatusRepository statusRepository;
     BrdRepository brdRepository;
