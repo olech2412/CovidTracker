@@ -1,8 +1,6 @@
 # CovidTracker
 
-[![Maven CI/CD](https://github.com/olech2412/CovidTracker/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/olech2412/CovidTracker/actions/workflows/build.yml)
-
-[![CodeFactor](https://www.codefactor.io/repository/github/olech2412/covidtracker/badge)](https://www.codefactor.io/repository/github/olech2412/covidtracker)
+[![Maven CI/CD](https://github.com/olech2412/CovidTracker/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/olech2412/CovidTracker/actions/workflows/build.yml) [![CodeFactor](https://www.codefactor.io/repository/github/olech2412/covidtracker/badge)](https://www.codefactor.io/repository/github/olech2412/covidtracker)
 
 Vaadin basiertes Programm, was automatisiert die aktuellen Corona Daten in einer Datenbank speichert und diese über eine Weboberfläche zur Verfügung stellt.
 
