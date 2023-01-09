@@ -1,7 +1,9 @@
 package org.vaadin.covid.backend;
 
+/**
+ * Enum to loop through different Urls to fetch Data from the API and to format the data
+ */
 public enum RequestedURLEnum {
-
     blMV,
     blBer,
     blFS,
@@ -13,6 +15,8 @@ public enum RequestedURLEnum {
     blMVlkLP,
     blMVlkNWM,
     blMVlkSN,
+
     status,
+
     brd
 }

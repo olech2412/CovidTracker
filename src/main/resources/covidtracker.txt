@@ -5,5 +5,5 @@
 |  `----.|  `--'  |    \    /    |  | |  '--'  |    |  |     |  |\  \----. /  _____  \  |  `----.|  .  \  |  |____ |  |\  \----.
  \______| \______/      \__/     |__| |_______/     |__|     | _| `._____|/__/     \__\  \______||__|\__\ |_______|| _| `._____|
 
-Developed by christopho
+Developed by christoph
 Powered by Spring Boot ${spring-boot.version} with Java ${java.version}

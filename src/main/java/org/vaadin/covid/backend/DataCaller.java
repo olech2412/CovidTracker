@@ -14,11 +14,10 @@ import java.time.LocalTime;
 
 @Log4j2
 public class DataCaller {
-    int responseCode;
-    String requestedURL;
-
-    RequestedURLEnum requestedURLEnum;
-    Object fetchedData;
+    public int responseCode;
+    private String requestedURL;
+    private RequestedURLEnum requestedURLEnum;
+    private Object fetchedData;
 
     /**
      * Returns the requested URL as Enum used to trigger the correct data fetching
